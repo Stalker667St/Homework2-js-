@@ -37,6 +37,7 @@ const country = prompt("Назвіть країну:").trim();
 
 const upperCity = city.toUpperCase();
 const lowerCountry = country.toLowerCase();
+const lowerCity = city.toLowerCase();
 
 console.log("Місто:", upperCity);
 console.log("Країна:", lowerCountry);
@@ -44,10 +45,10 @@ console.log("Країна:", lowerCountry);
 console.log("Довжина назви місто", city.length);
 console.log("Довжина назви країна", country.length);
 
-console.log("Чи містить місто літеру a:", city.includes("a"));
+console.log("Чи містить місто літеру a:", lowerCity.includes("a"));
 
-console.log("Індекс першої літери a:", city.indexOf("a"));
-console.log("Індекс останньої літери a:", city.lastIndexOf("a"));
+console.log("Індекс першої літери a:", lowerCity.indexOf("a"));
+console.log("Індекс останньої літери a:", lowerCity.lastIndexOf("a"));
 
 console.log(`I live in ${upperCity}, ${lowerCountry}.`);
 
