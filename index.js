@@ -23,7 +23,7 @@ if (orderSum === null || tipPresent === null) {
     const tipAmount = (sum * tip) / 100;
     const totalSum = sum + tipAmount;
 
-    alert(`Загальна сума: ${sum}
+    alert(`Загальна сума: ${sum.toFixed(2)}
 Чайові: ${tip}%
 Сума чайових: ${tipAmount.toFixed(2)}
 До сплати: ${totalSum.toFixed(2)}`);
