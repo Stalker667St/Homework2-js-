@@ -1,72 +1,95 @@
-const name = "Andriu";
-let age;
-age = 21;
-console.log(name, age);
+/* 1. Визначення оцінки */
 
-const answer = confirm("Чи виповнилося вам 18?");
-console.log(answer);
+const score = Number(prompt("Введіть кількість балів від 0 до 100:"));
 
-const number = prompt("Яке ваше улюблене число");
-console.log(number);
+const result = score >= 60 ? "Passed" : "Failed";
 
-console.log(typeof name, typeof age, typeof answer, typeof number);
+console.log(result);
 
-/* Розрахунок вартості покупки */
-const price = Number(prompt("Ціна товару:"));
-const quantity = Number(prompt("Кількість товарів:"));
+/* 2. Вибір напою */
 
-const initialCost = price * quantity;
+const drink = Number(prompt("Оберіть напій (1-4):"));
 
-let discountedCost = initialCost;
-discountedCost -= discountedCost * 0.15;
+switch (drink) {
+  case 1:
+    console.log("Coffee");
+    break;
 
-console.log("Початкова вартість:", initialCost);
-console.log("Вартість зі знижкою 15%:", discountedCost);
+  case 2:
+    console.log("Tea");
+    break;
 
-console.log("Ціна:", typeof price);
-console.log("Кількість:", typeof quantity);
-console.log("Початкова вартість:", typeof initialCost);
+  case 3:
+    console.log("Juice");
+    break;
 
-console.log("Ціна", Number.isNaN(price));
-console.log("Кількість", Number.isNaN(quantity));
-console.log("Початкова вартість", Number.isNaN(initialCost));
+  case 4:
+    console.log("Water");
+    break;
 
-/* Обробка тексту */
-const city = prompt("Назвіть місто:").trim();
-const country = prompt("Назвіть країну:").trim();
+  default:
+    console.log("Unknown drink");
+}
 
-const upperCity = city.toUpperCase();
-const lowerCountry = country.toLowerCase();
-const lowerCity = city.toLowerCase();
+/* 3. Пошук найбільшого числа */
 
-console.log("Місто:", upperCity);
-console.log("Країна:", lowerCountry);
+const firstNumber = Number(prompt("Введіть перше число:"));
+const secondNumber = Number(prompt("Введіть друге число:"));
+const thirdNumber = Number(prompt("Введіть третє число:"));
 
-console.log("Довжина назви місто", city.length);
-console.log("Довжина назви країна", country.length);
+let largestNumber;
 
-console.log("Чи містить місто літеру a:", lowerCity.includes("a"));
+if (firstNumber >= secondNumber && firstNumber >= thirdNumber) {
+  largestNumber = firstNumber;
+} else if (secondNumber >= thirdNumber) {
+  largestNumber = secondNumber;
+} else {
+  largestNumber = thirdNumber;
+}
 
-console.log("Індекс першої літери a:", lowerCity.indexOf("a"));
-console.log("Індекс останньої літери a:", lowerCity.lastIndexOf("a"));
+console.log("Найбільше число:", largestNumber);
 
-console.log(`I live in ${upperCity}, ${lowerCountry}.`);
+/* 4. Підрахунок суми */
 
-/* Робота з об'єктом Math */
-const number1 = 7;
-const number2 = 13;
+let sum = 0;
 
-console.log("Сума:", number1 + number2);
-console.log("Різниця:", number1 - number2);
-console.log("Добуток:", number1 * number2);
-console.log("Частка:", number1 / number2);
+for (let i = 1; i <= 100; i++) {
+  sum += i;
+}
 
-const division = number1 / number2;
-console.log(Math.round(division)); //Виведе: 1
+console.log(sum);
 
-console.log(Math.floor(division)); //Виведе: 0
+/* 5. Таблиця множення */
 
-console.log(Math.ceil(division)); //Виведе: 1
+const multiplicationNumber = Number(
+  prompt("Введіть число для таблиці множення:"),
+);
 
-console.log("Більше число:", Math.max(number1, number2));
-console.log("Менше число:", Math.min(number1, number2));
+for (let i = 1; i <= 10; i++) {
+  console.log(`${multiplicationNumber} * ${i} = ${multiplicationNumber * i}`);
+}
+
+/* 6. Робота з рядком */
+
+const word = "CocaCola";
+let letterCount = 0;
+
+for (let i = 0; i < word.length; i++) {
+  if (word[i].toLowerCase() === "a") {
+    letterCount++;
+  }
+}
+
+console.log(`Кількість літер "a": ${letterCount}`);
+
+/* 7. Функція для розрахунку ціни */
+
+function calculatePrice(price, quantity) {
+  const totalPrice = price * quantity;
+
+  console.log(totalPrice);
+}
+
+calculatePrice(250, 3);
+calculatePrice(100, 5);
+calculatePrice(75, 4);
